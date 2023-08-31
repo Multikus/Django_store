@@ -15,7 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from products.views import index, products
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # Указываем страницу первым параметром.
+    # Переопределили страницу, оставив пустое место. Теперь эта страница будет выводиться на главной
+    # Второй параметр имя контроллера. Функция - () не ставим, передаем только ссылку. Имя без ()
+    # Третий параметр это название - сюда передаем само название
+    path('', index, name='index'),
+    path('products/', products, name='products')
+
 ]
