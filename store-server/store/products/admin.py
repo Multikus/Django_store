@@ -1,3 +1,8 @@
 from django.contrib import admin
 
-# Register your models here.
+# Импортируем таблицы
+from products.models import ProductCategory, Product
+
+# регистрируем модель
+admin.site.register(Product)
+admin.site.register(ProductCategory)
